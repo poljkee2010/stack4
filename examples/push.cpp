@@ -2,15 +2,20 @@
 #include "stack.hpp"
 using namespace std;
 
-void StackPop()
+void StackPush()
 {
 	try {
-		cout << "File pop.cpp" << endl;
-		stack<size_t>sizetStack;
-		sizetStack.push(1);
-		cout << "Content file pop.cpp\t" << sizetStack.pop() << endl;
-	}
+		cout << "File push.cpp" << endl;
+		stack<char>charSt;
+		charSt.push('b');
+		charSt.push('m');
+		charSt.push('s');
+		charSt.push('t');
+		charSt.push('u');
+		charSt.push('1'); // reallocate()
 
+		cout << "Number symbols in file push.cpp" << charSt.count() << endl;
+	}
 	catch (const exception& e)
 	{
 		cout << e.what() << endl;
@@ -19,6 +24,6 @@ void StackPop()
 
 int main()
 {
-	StackPop();
+	StackPush();
 	return 0;
 }
