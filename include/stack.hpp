@@ -14,8 +14,8 @@ private:
 	size_t count_; //номер элемента
 	size_t capacity_;  //зарезервированная память (первоначальный размер стека)
 public:
-	stack() noexcept : capacity_(5), count_(0), array_{ new T[5] } {}
-	stack(size_t n) noexcept : capacity_{n}, count_(0), array_{ new T[n] } {}
+	stack() noexcept:capacity_(5), count_(0), array_{ new T[5] } {}
+	stack(size_t n) noexcept:capacity_{n}, count_(0), array_{ new T[n] } {}
 
 	size_t count() const // используем спецификатор const в конце функции т.к. метод ничего не изменяет,а только возвращает 
 	{
@@ -49,10 +49,10 @@ public:
 		delete[] array_;  //освобождение памяти
 	}
   
-  Stack(initializer_list<T> list) : capacity_(list.capacity_),count_(list.count_),array_(new T[list.capacity_])
-  {
-    copy(list.begin(), list.end(), array_);
-  }
+	stack(initializer_list<T> list):capacity_(list.capacity_),count_(list.count_),array_(new T[list.capacity_])
+	{
+		copy(list.begin(), list.end(), array_);
+	}
 
 	bool empty() const
 	{
@@ -81,13 +81,12 @@ public:
 		}
 	}
 
-	stack(stack&& s) noexcept : capacity_(s.capacity_), count_(s.count_), array_(s.array_) //Конструктор перемещения
+	stack(stack&& s) noexcept:capacity_(s.capacity_), count_(s.count_), array_(s.array_) //Конструктор перемещения
 	{
 		s.capacity_ = 0;
 		s.count_ = 0;
 		s.array_ = nullptr;
 	}
-
 
 	stack operator = (const stack& S) noexcept //Оператор присваивания с семантикой копирования
 	{
