@@ -9,7 +9,7 @@ SCENARIO("TEST INIT")
 	
 SCENARIO("TEST PUSH") 
 {
-	Stack<int>StPush;
+	stack<int>StPush;
 
 	StPush.push(1);
 	StPush.push(2);
@@ -25,7 +25,7 @@ SCENARIO("TEST PUSH")
 
 SCENARIO("TEST POP")
 {
-	Stack<int>StPop;
+	stack<int>StPop;
 
 	StPop.push(1);
 	StPop.push(2);
