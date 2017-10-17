@@ -1,11 +1,11 @@
 #include "catch.hpp"
 #include <stack.hpp>
 
-SCENARIO("TEST INIT") 
-{
-	stack<int>StInit;
-	REQUIRE(StInit.count() == 0);
-}
+// SCENARIO("TEST INIT") 
+// {
+// 	stack<int>StInit;
+// 	REQUIRE(StInit.count() == 0);
+// }
 	
 SCENARIO("TEST PUSH") 
 {
@@ -19,7 +19,7 @@ SCENARIO("TEST PUSH")
 
 	StPush.pop();
 
-  	//REQUIRE(StPush.top() == 5);
+  	REQUIRE(StPush.top() == 5);
 	REQUIRE(StPush.count() == 4);
 }
 
